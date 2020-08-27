@@ -33,7 +33,7 @@ services:
         - "traefik.enable=true"
         - "traefik.http.routers.portainer.rule=Host(`portainer.secandsys.com`)"
         - "traefik.http.routers.portainer.entrypoints=web"
-        - "traefik.http.services.portainer.loadbalancer.server.port=9000" # it seems you always need to give traefik a port so it 'notices' the service
+        - "traefik.http.services.portainer.loadbalancer.server.port=9000" 
         - "traefik.http.routers.portainer-secured.rule=Host(`portainer.secandsys.com`)"
         - "traefik.http.routers.portainer-secured.entrypoints=web-secured"
         - "traefik.http.routers.portainer-secured.tls.certresolver=mytlschallenge"
@@ -45,4 +45,3 @@ networks:
     external: true
 volumes:
   portainer_data:
-
